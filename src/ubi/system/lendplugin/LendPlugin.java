@@ -16,23 +16,23 @@ import javafx.scene.image.Image;
 import ubi.system.plugin.Plugin;
 
 public class LendPlugin implements Plugin{
-	//UIŠÖŒW
+	//UIé–¢ä¿‚
 	private	FXMLLoader					loader;
 	private	GridPane						content;
 	private	LendPluginController	controller;
 	
-	//WebƒJƒƒ‰ŠÖŒW
+	//Webã‚«ãƒ¡ãƒ©é–¢ä¿‚
 	private	VideoCapture				videoCapture;
 	private	CaptureService			captureService;
 	private	Mat								image;
 	private	MatOfByte					buf;	
-	private	String							qrResult;					//QRƒR[ƒh“à—e
+	private	String							qrResult;					//QRã‚³ãƒ¼ãƒ‰èª­ã¿å–ã‚Šçµæœ
 	
-	//FelicaŠÖŒW
+	//Felicaé–¢ä¿‚
 	private	FelicaReader				felicaReader;
 	private	FelicaService				felicaService;
-	private	String							felicaResult;				//Felicaæ“¾“à—e
-	
+	private	String							felicaResult;				//Felicaå†…å®¹
+
 	public LendPlugin() throws IOException{
 		loader 			= new FXMLLoader(getClass().getResource("LendFrame.fxml"));
 		content		= loader.load();
@@ -47,7 +47,7 @@ public class LendPlugin implements Plugin{
 		
 		videoCapture = new VideoCapture(0);
 		captureService = new CaptureService(videoCapture);
-		captureService.start();													//ƒLƒƒƒvƒ`ƒƒ[ŠJn
+		captureService.start();													//ã‚­ãƒ£ãƒ—ãƒãƒ£ãƒ¼é–‹å§‹
 		
 		felicaReader		= new FelicaReader();
 		felicaService		= new FelicaService(felicaReader);
