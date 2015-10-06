@@ -7,6 +7,6 @@
 	<classpathentry kind="lib" path="C:/Program Files/opencv/build/java/opencv-2411.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/zxing-zxing-3.2.0/javase/target/javase-3.2.0.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/zxing-zxing-3.2.0/core/target/core-3.2.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/naoki-ma/workspace/LendPlugin/jna-4.1.0.jar"/>
+	<classpathentry kind="lib" path="jna-4.2.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

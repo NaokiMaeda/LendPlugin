@@ -11,7 +11,7 @@ public class LendPluginFactory implements PluginFactory{
 	
 	@Override
 	public String getName() {
-		return "貸出";
+		return "�ݏo";
 	}
 	
 	@Override

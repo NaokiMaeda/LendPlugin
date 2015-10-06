@@ -43,7 +43,7 @@ public class GetQR {
 			Result qr = qrReader.decode(bitmap);
 			return qr.getText();
 		}catch(NotFoundException | ChecksumException | FormatException ex){
-			return null;			//ä¾‹å¤–å†…å®¹ : ex.toString();
+			return null;			//—áŠO“à—e : ex.toString();
 		}
 	}
 }
