@@ -6,10 +6,10 @@ import org.opencv.highgui.VideoCapture;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
 
-public class CaptureService extends Service{
-	private 				VideoCapture	videoCapture;
+public class CaptureService extends Service<Object>{
+	private 			VideoCapture	videoCapture;
 	
-	private	final		Mat					image 	= new Mat();
+	private	final		Mat				image 	= new Mat();
 	
 	public CaptureService(VideoCapture videoCapture) {
 		super();

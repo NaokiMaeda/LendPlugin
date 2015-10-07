@@ -3,7 +3,7 @@ package ubi.system.lendplugin;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
 
-public class FelicaService extends Service{
+public class FelicaService extends Service<Object>{
 	private	FelicaReader	felicaReader;
 	
 	public FelicaService(FelicaReader felicaReader) throws FelicaException {

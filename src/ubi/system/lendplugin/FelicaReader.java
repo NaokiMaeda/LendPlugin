@@ -10,9 +10,9 @@ public class FelicaReader {
 	
 	public FelicaReader() throws FelicaException{
 		pasoriHandle = FelicaLib.INSTANCE.pasori_open(null);
-		if(pasoriHandle == null)	throw new FelicaException("felicalib.dllÇäJÇØÇ‹ÇπÇÒ");
+		if(pasoriHandle == null)	throw new FelicaException("felicalib.dll");
 		if(FelicaLib.INSTANCE.pasori_init(pasoriHandle) != 0)
-			throw new FelicaException("PaSoRiÇ…ê⁄ë±Ç≈Ç´Ç‹ÇπÇÒ");
+			throw new FelicaException("PaSoRi");
 	}
 	
 	public void close(){
@@ -23,7 +23,7 @@ public class FelicaReader {
 	public void polling(Short systemCode) throws FelicaException{
 		FelicaLib.INSTANCE.felica_free(felicaHandle);
 		felicaHandle = FelicaLib.INSTANCE.felica_polling(pasoriHandle, systemCode, (byte)0, (byte)0);
-		if(felicaHandle == Pointer.NULL)	throw new FelicaException("ÉJÅ[Éhì«Ç›éÊÇËé∏îs");
+		if(felicaHandle == Pointer.NULL)	throw new FelicaException("");
 	}
 	
 	public byte[] getIDm() throws FelicaException{
@@ -40,7 +40,7 @@ public class FelicaReader {
         felicaHandle = FelicaLib.INSTANCE.felica_polling(pasoriHandle, systemCode, (byte)0, (byte)0);
         if(felicaHandle==Pointer.NULL) {
         	return null;
-        	//throw new FelicaException("ÉJÅ[Éhì«Ç›éÊÇËé∏îs");
+        	//throw new FelicaException("ÔøΩJÔøΩ[ÔøΩhÔøΩ«Ç›éÔøΩËé∏ÔøΩs");
         }
         byte[] buf = new byte[8];
         FelicaLib.INSTANCE.felica_getidm(felicaHandle, buf);

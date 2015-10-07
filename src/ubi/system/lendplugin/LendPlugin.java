@@ -1,5 +1,6 @@
 package ubi.system.lendplugin;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
 import org.opencv.core.Mat;
@@ -7,31 +8,29 @@ import org.opencv.core.MatOfByte;
 import org.opencv.highgui.Highgui;
 import org.opencv.highgui.VideoCapture;
 
-import java.io.ByteArrayInputStream;
-
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.layout.GridPane;
 import javafx.scene.image.Image;
+import javafx.scene.layout.GridPane;
 import ubi.system.plugin.Plugin;
 
 public class LendPlugin implements Plugin{
-	//UIŠÖŒW
+	//UIé–¢ä¿‚
 	private	FXMLLoader					loader;
 	private	GridPane						content;
 	private	LendPluginController	controller;
 	
-	//WebƒJƒƒ‰ŠÖŒW
+	//Webã‚«ãƒ¡ãƒ©é–¢ä¿‚
 	private	VideoCapture				videoCapture;
 	private	CaptureService			captureService;
 	private	Mat								image;
 	private	MatOfByte					buf;	
-	private	String							qrResult;					//QRƒR[ƒh“à—e
+	private	String							qrResult;					//QRã‚³ãƒ¼ãƒ‰å†…å®¹
 	
-	//FelicaŠÖŒW
+	//Felicaé–¢ä¿‚
 	private	FelicaReader				felicaReader;
 	private	FelicaService				felicaService;
-	private	String							felicaResult;				//Felicaæ“¾“à—e
+	private	String							felicaResult;				//Felicaå–å¾—å†…å®¹
 	
 	public LendPlugin() throws IOException{
 		loader 			= new FXMLLoader(getClass().getResource("LendFrame.fxml"));
@@ -47,7 +46,7 @@ public class LendPlugin implements Plugin{
 		
 		videoCapture = new VideoCapture(0);
 		captureService = new CaptureService(videoCapture);
-		captureService.start();													//ƒLƒƒƒvƒ`ƒƒ[ŠJn
+		captureService.start();													//ã‚­ãƒ£ãƒ—ãƒãƒ£ãƒ¼é–‹å§‹
 		
 		felicaReader		= new FelicaReader();
 		felicaService		= new FelicaService(felicaReader);

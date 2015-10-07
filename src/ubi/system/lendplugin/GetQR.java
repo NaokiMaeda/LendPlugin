@@ -16,7 +16,7 @@ import com.google.zxing.common.HybridBinarizer;
 import com.google.zxing.qrcode.QRCodeReader;
 
 public class GetQR {
-	private	Mat						image;
+	private	Mat				image;
 	private	QRCodeReader	qrReader;
 	
 	public GetQR(Mat image){
@@ -43,7 +43,7 @@ public class GetQR {
 			Result qr = qrReader.decode(bitmap);
 			return qr.getText();
 		}catch(NotFoundException | ChecksumException | FormatException ex){
-			return null;			//—áŠO“à—e : ex.toString();
+			return null;			//ä¾‹å¤–å†…å®¹ : ex.toString();
 		}
 	}
 }

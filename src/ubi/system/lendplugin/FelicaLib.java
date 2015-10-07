@@ -5,7 +5,7 @@ import com.sun.jna.Native;
 import com.sun.jna.Pointer;
 
 public interface FelicaLib extends Library{
-	 FelicaLib INSTANCE = (FelicaLib) Native.loadLibrary("felicalib", FelicaLib.class);
+	 static FelicaLib INSTANCE = (FelicaLib)Native.loadLibrary("felicalib", FelicaLib.class);
 
      Pointer	pasori_open(String dummy);
      int		pasori_init(Pointer pasoriHandle);
