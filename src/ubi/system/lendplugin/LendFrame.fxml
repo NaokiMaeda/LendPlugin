@@ -27,7 +27,7 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Button alignment="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" text="Enter" textAlignment="CENTER" GridPane.rowIndex="2">
+      <Button fx:id="executeButton" alignment="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" text="Enter" textAlignment="CENTER" GridPane.rowIndex="2">
          <font>
             <Font size="30.0" />
          </font>

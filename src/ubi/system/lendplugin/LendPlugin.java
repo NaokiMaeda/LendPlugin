@@ -16,28 +16,28 @@ import ubi.system.plugin.Plugin;
 
 public class LendPlugin implements Plugin{
 	//UI関係
-	private	FXMLLoader					loader;
-	private	GridPane						content;
+	private	FXMLLoader				loader;
+	private	GridPane				content;
 	private	LendPluginController	controller;
 	
 	//Webカメラ関係
-	private	VideoCapture				videoCapture;
+	private	VideoCapture			videoCapture;
 	private	CaptureService			captureService;
-	private	Mat								image;
-	private	MatOfByte					buf;	
-	private	String							qrResult;					//QRコード内容
+	private	Mat						image;
+	private	MatOfByte				buf;	
+	private	String					qrResult;					//QRコード内容
 	
 	//Felica関係
-	private	FelicaReader				felicaReader;
-	private	FelicaService				felicaService;
-	private	String							felicaResult;				//Felica取得内容
+	private	FelicaReader			felicaReader;
+	private	FelicaService			felicaService;
+	private	String					felicaResult;				//Felica取得内容
 	
 	public LendPlugin() throws IOException{
 		loader 			= new FXMLLoader(getClass().getResource("LendFrame.fxml"));
-		content		= loader.load();
-		controller		= (LendPluginController)loader.getController();	
-		qrResult		= "";
-		felicaResult	= "";
+		content			= loader.load();
+		controller		= (LendPluginController)loader.getController();
+		qrResult		= new String();
+		felicaResult	= new String();
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -46,7 +46,7 @@ public class LendPlugin implements Plugin{
 		
 		videoCapture = new VideoCapture(0);
 		captureService = new CaptureService(videoCapture);
-		captureService.start();													//キャプチャー開始
+		captureService.start();									//キャプチャー開始
 		
 		felicaReader		= new FelicaReader();
 		felicaService		= new FelicaService(felicaReader);
